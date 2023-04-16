@@ -33,7 +33,7 @@ Once again, I have used the provided topology to broadcast messages to each neig
 - Median latency is below 400ms
 - Maximum latency is below 600ms
 
-My solution is to divide the 25 nodes into two groups, each with a master node. Each master broadcasts to its children and the other master.
+My solution is to divide the 25 nodes into two groups, each with a master node. Each master node broadcasts messages to its children as well as the other master node.
 
 My result : 
 - Messages-per-operation : 23.21
@@ -49,7 +49,7 @@ My result :
 - Median latency is below 1s
 - Maximum latency is below 2s
 
-The same solution as before, but messages are now broadcasted in batches
+This is the same solution as before, but with messages now broadcasted in batches to ensure that the message rate stays below 20 messages per second with 25 nodes.
 
 My result : 
 - Messages-per-operation : 4.59
