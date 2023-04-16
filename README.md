@@ -25,3 +25,35 @@ This time, there are five nodes. I have used the provided topology to broadcast 
 Once again, I have used the provided topology to broadcast messages to each neighbor. RPC calls are retried until the remote node responds
 
 [challenge link](https://fly.io/dist-sys/3c/)
+
+## challenge 3d - brodcast part IV - Efficient Broadcast
+ Now, this is more challenging! We have to respect some constraints :
+
+- Messages-per-operation is below 30
+- Median latency is below 400ms
+- Maximum latency is below 600ms
+
+My solution is to divide the 25 nodes into two groups, each with a master node. Each master broadcasts to its children and the other master.
+
+My result : 
+- Messages-per-operation : 23.21
+- Median latency : 192ms
+- Maximum latency : 316ms
+
+[challenge link](https://fly.io/dist-sys/3d/)
+
+## challenge 3e - brodcast part IV - Efficient Broadcast (bis)
+ constraints :
+
+- Messages-per-operation is below 20
+- Median latency is below 1s
+- Maximum latency is below 2s
+
+The same solution as before, but messages are now broadcasted in batches
+
+My result : 
+- Messages-per-operation : 4.59
+- Median latency : 442ms
+- Maximum latency : 988ms
+
+[challenge link](https://fly.io/dist-sys/3e/)
