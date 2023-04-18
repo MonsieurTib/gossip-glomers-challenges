@@ -1,22 +1,22 @@
 # gossip-glomers-challenges
 My solutions to Gossip-Glomers Fly.io Distributed Systems Challenges in C#
 
-## challenge 1 - echo
+## challenge 1 - Echo
 There's nothing to do, as it's just an introductory guide to Maelstrom.
 
 [challenge link](https://fly.io/dist-sys/1/)
 
-## challenge 2 - unique Id generation
+## challenge 2 - Unique Id generation
 My solution involves concatenating the nodeId, UNIX timestamp in milliseconds, and an atomic increment.
 
 [challenge link](https://fly.io/dist-sys/2/)
 
-## challenge 3a - brodcast part I - Single node broadcast
+## challenge 3a - Brodcast part I - Single node broadcast
 Nothing complicated since there is only one node.
 
 [challenge link](https://fly.io/dist-sys/3a/)
 
-## challenge 3b - brodcast part II - Multi node broadcast
+## challenge 3b - Brodcast part II - Multi node broadcast
 This time, there are five nodes. I have used the provided topology to broadcast messages to each neighbor.
 
 [challenge link](https://fly.io/dist-sys/3b/)
@@ -26,7 +26,7 @@ Once again, I have used the provided topology to broadcast messages to each neig
 
 [challenge link](https://fly.io/dist-sys/3c/)
 
-## challenge 3d - brodcast part IV - Efficient Broadcast
+## challenge 3d - Brodcast part IV - Efficient Broadcast
  Now, this is more challenging! We have to respect some constraints :
 
 - Messages-per-operation is below 30
@@ -42,7 +42,7 @@ My result :
 
 [challenge link](https://fly.io/dist-sys/3d/)
 
-## challenge 3e - brodcast part IV - Efficient Broadcast (bis)
+## challenge 3e - Brodcast part IV - Efficient Broadcast (bis)
  constraints :
 
 - Messages-per-operation is below 20
@@ -57,3 +57,10 @@ My result :
 - Maximum latency : 988ms
 
 [challenge link](https://fly.io/dist-sys/3e/)
+
+## challenge 4 - Grow-Only Counter
+ 
+ Solution need only be eventually consistent: given a few seconds without writes, it should converge on the correct counter value.
+ My solution : each node replicates local data to other nodes.
+
+[challenge link](https://fly.io/dist-sys/4/)
