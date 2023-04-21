@@ -1,5 +1,5 @@
 # gossip-glomers-challenges
-My solutions to Gossip-Glomers Fly.io Distributed Systems Challenges in C#
+My solutions to [Fly.io distributed systems challenges](https://fly.io/dist-sys) in C#
 
 ## challenge 1 - Echo
 There's nothing to do, as it's just an introductory guide to Maelstrom.
@@ -60,7 +60,43 @@ My result :
 
 ## challenge 4 - Grow-Only Counter
  
- Solution need only be eventually consistent: given a few seconds without writes, it should converge on the correct counter value.
- My solution : each node replicates local data to other nodes.
+Solution need only be eventually consistent: given a few seconds without writes, it should converge on the correct counter value.
+My solution : each node replicates local data to other nodes.
 
 [challenge link](https://fly.io/dist-sys/4/)
+
+## challenge 5a - Kafka style part I - Single-Node Kafka-Style Log
+ 
+Nothing complicated since there is only one node.
+
+[challenge link](https://fly.io/dist-sys/5a/)
+
+## challenge 5b/5cc - Kafka style part II/III - Multi-Node Kafka-Style Log / Efficient Kafka-Style Log
+ 
+My solution worked for the last two Kafka challenges without using the seq-kv provided by Maelstrom. 
+I declared the first node as the master and the other nodes forwarded messages to the master and read from it.
+
+- Messages-per-operation : 2.3
+- Availability : 0.9991452
+- Throughput max : 350 hz
+
+[challenge link](https://fly.io/dist-sys/5b/)
+[challenge link](https://fly.io/dist-sys/5c/)
+
+## challenge 6a - Totally-Available part I - Single-Node, Totally-Available Transactions
+ 
+Nothing complicated since there is only one node.
+
+[challenge link](https://fly.io/dist-sys/6a/)
+
+## challenge 6b - Totally-Available part II - Totally-Available, Read Uncommitted Transactions
+ 
+Each transaction is replicated using my rpc implementation (infinite retries :-) )
+
+[challenge link](https://fly.io/dist-sys/6b/)
+
+## challenge 6c - Totally-Available part III - Totally-Available, Read Committed Transactions
+ 
+Same solution as 6b, test is passing..
+
+[challenge link](https://fly.io/dist-sys/6c/)
