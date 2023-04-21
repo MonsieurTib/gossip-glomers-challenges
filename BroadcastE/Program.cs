@@ -31,7 +31,6 @@ node.OnInit += async () =>
             while (chanel.Reader.TryRead(out var payload))
             {
                 payload.msg.Body["messages"] = JsonSerializer.SerializeToNode(ids);
-                //Console.Error.WriteLine("yop - " + payload.msg.Body["messages"] );
                 var tasks = payload.dests.Where(neighbor => neighbor != payload.msg.Src)
                     .Select(neighbor => node.Rpc(neighbor, payload.msg.Body))
                     .ToList();
