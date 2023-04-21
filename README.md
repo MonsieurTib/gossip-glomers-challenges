@@ -71,7 +71,7 @@ Nothing complicated since there is only one node.
 
 [challenge link](https://fly.io/dist-sys/5a/)
 
-## challenge 5b/5cc - Kafka style part II/III - Multi-Node Kafka-Style Log / Efficient Kafka-Style Log
+## challenge 5b/5c - Kafka style part II/III - Multi-Node Kafka-Style Log / Efficient Kafka-Style Log
  
 My solution worked for the last two Kafka challenges without using the seq-kv provided by Maelstrom. 
 I declared the first node as the master and the other nodes forwarded messages to the master and read from it.
